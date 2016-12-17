@@ -11,10 +11,11 @@
 
 /* Keycodes: https://github.com/jackhumbert/qmk_firmware/blob/master/doc/keycode.txt */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  // todo: update this graphic
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   =    |   1  |   2  |   3  |   4  |   5  | LEFT |           | RIGHT|   6  |   7  |   8  |   9  |   0  |   -    |
+ * |   =    |   1  |   2  |   3  |   4  |   5  |   6  |           | RIGHT|   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L1  |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -36,23 +37,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
-        KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_LEFT,
-        KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   TG(SYMB),
-        KC_ESC,         KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
-        KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   ALL_T(KC_NO),
-        KC_GRV,         KC_LCTRL,     KC_LALT,KC_LEFT,KC_RGHT,
-                                              ALT_T(KC_APP),  KC_LGUI,
-                                                              KC_HOME,
-                                              KC_BSPC,KC_DELT,KC_END,
+        KC_EQL,         KC_1,           KC_2,           KC_3,           KC_4,           KC_5,   KC_6,
+        KC_ESCAPE,      KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,   KC_LCTL,
+        KC_CAPSLOCK,    KC_A,           KC_S,           KC_D,           KC_F,           KC_G,
+        KC_LSFT,        KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,   KC_LALT,
+        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+
+                                                                        KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                        KC_TRANSPARENT,
+                                                               KC_LGUI, KC_TRANSPARENT, KC_TRANSPARENT,
         // right hand
-             KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
-             TG(SYMB),    KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_BSLS,
-                          KC_H,   KC_J,   KC_K,   KC_L,   LT(MDIA, KC_SCLN),GUI_T(KC_QUOT),
-             ALL_T(KC_NO),KC_N,   KC_M,   KC_COMM,KC_DOT, CTL_T(KC_SLSH),   KC_RSFT,
-                                  KC_UP,  KC_DOWN,KC_LBRC,KC_RBRC,          KC_FN1,
-             KC_LALT,        KC_RCTRL,
-             KC_PGUP,
-             KC_PGDN,KC_ENT, KC_SPC
+             KC_7,        KC_8,   KC_9,     KC_0,     KC_LBRACKET, KC_RBRACKET, KC_MINUS,
+             KC_BSPACE,   KC_Y,   KC_U,     KC_I,     KC_O,        KC_P,        KC_BSLASH,
+                          KC_H,   KC_J,     KC_K,     KC_L,        KC_SCOLON,   KC_QUOTE,
+             KC_ENT,      KC_N,   KC_M,     KC_COMMA, KC_DOT,      KC_SLASH,    KC_LSHIFT,
+                                  KC_LEFT,  KC_DOWN,  KC_UP,       KC_RIGHT,    KC_TRANSPARENT,
+
+             KC_TRANSPARENT, KC_TRANSPARENT,
+             KC_TRANSPARENT,
+             KC_GRAVE, KC_TAB, KC_SPACE
     ),
 /* Keymap 1: Symbol Layer
  *
